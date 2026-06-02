@@ -1,0 +1,45 @@
+#cloud-config
+
+package_update: true
+
+packages:
+  - nginx
+
+write_files:
+
+  - path: /var/www/html/index.html
+    permissions: '0644'
+    content: |
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <title>VM Informationen</title>
+      </head>
+      <body>
+      <h1>VM Informationen</h1>
+
+      <pre>
+      Hostname:
+      $(hostname)
+
+      Kernel:
+      $(uname -r)
+
+      IP:
+      $(hostname -I)
+      </pre>
+
+      </body>
+      </html>
+
+  - path: /var/www/html/api
+    permissions: '0644'
+    content: |
+      {
+        "status": "running",
+        "project": "Abgabe 2"
+      }
+
+runcmd:
+  - systemctl enable nginx
+  - systemctl restart nginx
