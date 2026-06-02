@@ -6,7 +6,7 @@ data "exoscale_template" "ubuntu" {
 
 # SSH Key registrieren
 resource "exoscale_ssh_key" "erik" {
-  name       = "erik-key"
+  name       = "erik-key-2"
   public_key = var.ssh_public_key
 }
 
