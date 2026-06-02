@@ -23,4 +23,4 @@ Workflow "destroy.yml" ausführen.
 ## Endpunkte
 
 - /      -> HTML Ansicht
-- /api   -> JSON API
+- /api.json   -> JSON API
