@@ -12,7 +12,7 @@ resource "exoscale_ssh_key" "erik" {
 
 # Firewall
 resource "exoscale_security_group" "web" {
-  name = "web-security-group"
+  name = "erik-abgabe2-sg"
 }
 
 resource "exoscale_security_group_rule" "ssh" {
